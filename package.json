@@ -1,0 +1,26 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "simple weather app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rlpennell/weather.git"
+  },
+  "author": "rlpennell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rlpennell/weather/issues"
+  },
+  "homepage": "https://github.com/rlpennell/weather#readme",
+  "devDependencies": {
+    "css-loader": "^5.0.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.20.1",
+    "webpack-cli": "^4.5.0"
+  }
+}
