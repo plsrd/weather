@@ -10,19 +10,25 @@
     <div class="search-bar">
       <label for="location-input">
         <input type="text" id="location-input" name="location-input"> 
-        <button class="search-btn">Q</button>
+        <button class="search-btn">🔎</button>
       </label>
     </div>
-    <div class="header">
-      <h1 class="location"></h1>
-      <h2 class="description"></h2>
-    </div>
-    <div class="info">
-      <div class="temp-container">
-        <p class="temp"></p>
-        <p class="unit"></p>
+    <div class="weather-container">
+      <div class="header">
+        <h1 class="location"></h1>
+        <h2 class="description"></h2>
       </div>
-
+      <div class="temp-info">
+        <div class="temp-container">
+          <p class="temp"></p>
+          <p class="unit">°F</p>
+        </div>
+        <div class="more-info">
+          <div><p>feels like:</p><p class='feels-like'></p></div>
+          <div><p>wind:</p><p class='wind'></p></div>
+          <div><p>humidity:</p><p class='humidity'></p></div>
+        </div>
+      </div>
     </div>
 
   </main>
