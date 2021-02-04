@@ -1,4 +1,6 @@
+
 main {
+  font-family: 'Source Code Pro', monospace;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -8,30 +10,55 @@ main {
   -ms-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);  
   height: 30em;
-  width: 60em;
-  border: 1px solid black;
+  width: 70em;
   padding: 1em;
 }
 
 .search-bar {
+  width: 195px;
   align-self: flex-end;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: .3em 0 .3em .8em;
+  border: 2px solid black;
+}
+
+input {
+  background: transparent;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1em;
+  width: 150px;
+  border: none;
+  color: black;
+  padding-left: .1em;
+}
+
+input::placeholder {
+  color: black;
+}
+
+input:focus {
+  outline: none;
 }
 
 .weather-container {
-  margin: auto 0;
   border: 2px solid black;
-  align-self: center;
+  margin: auto 0;
   display: flex;
   height: 15em;
   width: 30em;
   align-items: center;
+  border-radius: .5em;
 }
 
 .location-container {
-  flex-grow: 1;
+  width: 170px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 1em 0 2em;
 }
 
 .temp-container {
@@ -40,17 +67,32 @@ main {
 }
 
 .more-info {
+  box-sizing: border-box;
   flex-grow: 1;
+  border-left: 1px solid grey;
+  padding-left: 2em;
 }
 .more-info div {
   display: flex;
   flex-direction: row;
+  margin: 1em;
+}
+
+.descriptor {
+  font-weight: bold;
+  font-size: 1em;
+  padding-right: 1em;;
 }
 
 .location {
   font-size: 2em;
 }
 
+.temp-container {
+  margin-top: 1em;
+}
+
 .temp {
   font-size: 5em;
 }
+

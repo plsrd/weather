@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/e2d1dd43cd.js" crossorigin="anonymous"></script>
+  <title>MinimalWeather</title>
 </head>
 <body>
   <main>
     <div class="search-bar">
-      <label for="location-input">
-        <input type="text" id="location-input" name="location-input"> 
-        <button class="search-btn">🔎</button>
+      <label for="location-input"> 
+        <i class="fas fa-search search-btn"></i>
+        <input type="text" id="location-input" name="location-input" placeholder="Search Zipcode"> 
       </label>
     </div>
     <div class="weather-container">
@@ -25,9 +28,9 @@
         </div>
       </div>
       <div class="more-info">
-        <div><p>feels like:</p><p class='feels'></p></div>
-        <div><p>wind:</p><p class='wind'></p></div>
-        <div><p>humidity:</p><p class='humidity'></p></div>
+        <div><p class="descriptor">feels like:</p><p class='feels'></p></div>
+        <div><p class="descriptor">wind:</p><p class='wind'></p></div>
+        <div><p class="descriptor">humidity:</p><p class='humidity'></p></div>
       </div>
       </div>
     </div>

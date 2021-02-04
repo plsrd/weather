@@ -2,8 +2,8 @@ import'./reset.css';
 import './style.css';
 
 
-async function getLocation(loc){
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${loc.replace(' ', '+')}&appid=6aade3113afb82f8bae1aa3eb279a63e`;
+async function getLocation(zip){
+  const url = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=861858f00d605ef9644e285c1e18726e`
   console.log(url);
   try {
     const response = await fetch(url, {mode: 'cors'});
@@ -15,7 +15,6 @@ async function getLocation(loc){
 }
 
 function updateDisplay(data) {
-  console.log(data)
   const info = [{ class: '.location', data: data.name}, 
                 { class: '.description', data: data.weather[0].description} ,
                 { class: '.temp', data: convertTemp(data.main.temp) }, 
@@ -34,7 +33,7 @@ function convertTemp(kel) {
 }
 
 (() => {
-  const searchBtn = document.querySelector('button');
+  const searchBtn = document.querySelector('.search-btn');
   const input = document.getElementById('location-input');
 
   searchBtn.addEventListener('click', () => {
@@ -49,6 +48,6 @@ function convertTemp(kel) {
     }
   });
 
-  getLocation('san francisco');
+  getLocation(94805);
 
 })()
