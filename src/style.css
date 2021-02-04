@@ -1,0 +1,56 @@
+main {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);  
+  height: 30em;
+  width: 60em;
+  border: 1px solid black;
+  padding: 1em;
+}
+
+.search-bar {
+  align-self: flex-end;
+}
+
+.weather-container {
+  margin: auto 0;
+  border: 2px solid black;
+  align-self: center;
+  display: flex;
+  height: 15em;
+  width: 30em;
+  align-items: center;
+}
+
+.location-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.temp-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.more-info {
+  flex-grow: 1;
+}
+.more-info div {
+  display: flex;
+  flex-direction: row;
+}
+
+.location {
+  font-size: 2em;
+}
+
+.temp {
+  font-size: 5em;
+}

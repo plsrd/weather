@@ -8,7 +8,6 @@ async function getLocation(loc){
   try {
     const response = await fetch(url, {mode: 'cors'});
     const data = await response.json();
-    console.log(data);
     updateDisplay(data);
   } catch {
     console.log('no such city ya tit')
@@ -16,30 +15,40 @@ async function getLocation(loc){
 }
 
 function updateDisplay(data) {
-  const location = document.querySelector('.location');
-  location.textContent = data.name;
+  console.log(data)
+  const info = [{ class: '.location', data: data.name}, 
+                { class: '.description', data: data.weather[0].description} ,
+                { class: '.temp', data: convertTemp(data.main.temp) }, 
+                { class: '.feels', data: `${convertTemp(data.main.feels_like)}°F` },
+                { class: '.wind', data: `${data.wind.speed} mph` }, 
+                { class: '.humidity', data: `${data.main.humidity}%` },];
 
-  const description = document.querySelector('.description');
-  description.textContent = data.weather[0].description;
-
-  const temp = document.querySelector('.temp');
-  temp.textContent = convertTemp(data.main.temp);
-
-  const feelsLike = document.querySelector('.feels-like');
-  feelsLike.textContent = `${convertTemp(data.main.feels_like)}°`;
-
-  const wind = document.querySelector('.wind');
-  wind.textContent = `${data.wind.speed} mph`;
-
-  const humidity = document.querySelector('.humidity');
-  humidity.textContent = `${data.main.humidity}%`;
+  info.forEach(item => {
+    const el = document.querySelector(item.class);
+    el.textContent = item.data;
+  });
 }
 
 function convertTemp(kel) {
-  return Math.round((kel * (9/5)) - 459.67);
+  return Math.round(kel * (9/5) - 459.67);
 }
 
-
 (() => {
+  const searchBtn = document.querySelector('button');
+  const input = document.getElementById('location-input');
+
+  searchBtn.addEventListener('click', () => {
+    getLocation(input.value);
+    input.value = '';
+  });
+
+  input.addEventListener('keyup', function(event) {
+    if(event.key === 'Enter') {
+      event.preventDefault();
+      searchBtn.click();
+    }
+  });
+
   getLocation('san francisco');
+
 })()
